@@ -1,0 +1,231 @@
+# EESchema Netlist Version 1.1 created  Пнд 28 Май 2012 00:52:25
+(
+ ( /4FC29366 $noname  P4 PWR_12v {Lib=CONN_2}
+  (    1 GND )
+  (    2 VCC )
+ )
+ ( /4FC292B8 $noname  Q8 2N7002 {Lib=MOSFET_N}
+  (    D N-000005 )
+  (    G N-000006 )
+  (    S GND )
+ )
+ ( /4FC29298 $noname  Q7 2N7002 {Lib=MOSFET_N}
+  (    D N-000008 )
+  (    G N-000009 )
+  (    S GND )
+ )
+ ( /4FC29277 $noname  Q6 2N7002 {Lib=MOSFET_N}
+  (    D N-000010 )
+  (    G N-000014 )
+  (    S GND )
+ )
+ ( /4FC29251 $noname  Q4 2N7002 {Lib=MOSFET_N}
+  (    D N-000003 )
+  (    G N-000015 )
+  (    S GND )
+ )
+ ( /4FC29219 $noname  Q5 2N7002 {Lib=MOSFET_N}
+  (    D N-000032 )
+  (    G N-000018 )
+  (    S GND )
+ )
+ ( /4FC291F8 $noname  Q3 2N7002 {Lib=MOSFET_N}
+  (    D N-000002 )
+  (    G N-000017 )
+  (    S GND )
+ )
+ ( /4FC291E2 $noname  Q2 2N7002 {Lib=MOSFET_N}
+  (    D N-000020 )
+  (    G N-000004 )
+  (    S GND )
+ )
+ ( /4FC29122 $noname  R8 R68 {Lib=R}
+  (    1 N-000005 )
+  (    2 N-000023 )
+ )
+ ( /4FC29120 $noname  R7 R68 {Lib=R}
+  (    1 N-000008 )
+  (    2 N-000024 )
+ )
+ ( /4FC2911E $noname  R6 R68 {Lib=R}
+  (    1 N-000010 )
+  (    2 N-000025 )
+ )
+ ( /4FC2911D $noname  R5 R68 {Lib=R}
+  (    1 N-000003 )
+  (    2 N-000026 )
+ )
+ ( /4FC29118 $noname  R4 R68 {Lib=R}
+  (    1 N-000032 )
+  (    2 N-000027 )
+ )
+ ( /4FC29116 $noname  R3 R68 {Lib=R}
+  (    1 N-000002 )
+  (    2 N-000028 )
+ )
+ ( /4FC290F3 $noname  R2 R68 {Lib=R}
+  (    1 N-000020 )
+  (    2 N-000029 )
+ )
+ ( /4FC2905D $noname  R1 R180 {Lib=R}
+  (    1 N-000021 )
+  (    2 N-000030 )
+ )
+ ( /4FC28FE2 $noname  Q1 2N7002 {Lib=MOSFET_N}
+  (    D N-000021 )
+  (    G N-000022 )
+  (    S GND )
+ )
+ ( /4FC28E89 $noname  P3 LED_OUTPUT {Lib=CONN_9}
+  (    1 N-000023 )
+  (    2 N-000024 )
+  (    3 N-000025 )
+  (    4 N-000026 )
+  (    5 N-000027 )
+  (    6 N-000028 )
+  (    7 N-000029 )
+  (    8 N-000030 )
+  (    9 VCC )
+ )
+ ( /4FC28E26 $noname  P2 OUT {Lib=CONN_5}
+  (    1 GND )
+  (    2 N-000031 )
+  (    3 N-000013 )
+  (    4 N-000011 )
+  (    5 +5V )
+ )
+ ( /4FC28E20 $noname  P1 IN {Lib=CONN_5}
+  (    1 GND )
+  (    2 N-000031 )
+  (    3 N-000013 )
+  (    4 N-000012 )
+  (    5 +5V )
+ )
+)
+*
+{ Allowed footprints by component:
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "GND" "GND"
+ P2 1
+ P4 1
+ Q6 S
+ Q8 S
+ Q7 S
+ Q4 S
+ Q5 S
+ Q3 S
+ Q2 S
+ Q1 S
+ P1 1
+Net 2 "" ""
+ R3 1
+ Q3 D
+Net 3 "" ""
+ R5 1
+ Q4 D
+Net 5 "" ""
+ R8 1
+ Q8 D
+Net 7 "VCC" "VCC"
+ P3 9
+ P4 2
+Net 8 "" ""
+ R7 1
+ Q7 D
+Net 10 "" ""
+ Q6 D
+ R6 1
+Net 13 "" ""
+ P1 3
+ P2 3
+Net 19 "+5V" "+5V"
+ P1 5
+ P2 5
+Net 20 "" ""
+ Q2 D
+ R2 1
+Net 21 "" ""
+ Q1 D
+ R1 1
+Net 23 "" ""
+ R8 2
+ P3 1
+Net 24 "" ""
+ R7 2
+ P3 2
+Net 25 "" ""
+ P3 3
+ R6 2
+Net 26 "" ""
+ P3 4
+ R5 2
+Net 27 "" ""
+ P3 5
+ R4 2
+Net 28 "" ""
+ P3 6
+ R3 2
+Net 29 "" ""
+ P3 7
+ R2 2
+Net 30 "" ""
+ R1 2
+ P3 8
+Net 31 "" ""
+ P1 2
+ P2 2
+Net 32 "" ""
+ R4 1
+ Q5 D
+}
+#End

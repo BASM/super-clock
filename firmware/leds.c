@@ -40,7 +40,7 @@
 #define str(i)  ({if(i){PORTB |= 0x4;}else{PORTB &= ~0x4;}})
 #define drop()  ({PORTB &= ~0x3;})
 
-#define wait() _delay_ms(10);
+#define wait() _delay_us(1000);
 
 static int putcode(unsigned char num)
 {
@@ -54,9 +54,8 @@ static int putcode(unsigned char num)
   }
 }
 
-
-int putnum(signed char num){
-#define DOTNUM 1
+int leds_put(unsigned char num, unsigned char dot){
+#define DOTNUM (1<<7)
     // 0 -- '-'
     // 1 -- left up
     // 2 -- up
@@ -75,24 +74,30 @@ int putnum(signed char num){
     // 7  0   1   0   0   1   1   0   0
     // 8  0   1   1   1   1   1   1   1
     // 9  0   1   1   0   1   1   1   1
-    // -  0   0   0   0   0   0   0   1
-    // E  0   0   1   1   0   1   1   1
+    // A  0   1   0   1   1   1   1   1
+    // B  0   1   1   1   1   1   1   1
     // C  0   0   1   1   0   1   1   0
-      //                 0    1     2     3     4     5     6     7     8     9     -     E     C
-  unsigned char ARA[]={0x7e, 0x48, 0x3d, 0x6d, 0x4b, 0x67, 0x77, 0x4c, 0x7f, 0x6f, 0x01, 0x37, 0x36};
+    // D  0   1   1   1   1   1   1   0
+    // E  0   0   1   1   0   1   1   1
+    // F  0   0   0   1   0   1   1   1
+    // -  0   0   0   0   0   0   0   1
+      //                 0    1     2     3     4     5     6     7     8     9
+      //                 -   
+  unsigned char ARA[]={0x7e, 0x48, 0x3d, 0x6d, 0x4b, 0x67, 0x77, 0x4c, 0x7f, 0x6f,
+      //                
+      //                 A    B     C     D     E     F     -
+                       0x5f, 0x7f, 0x36, 0x7e, 0x37, 0x17, 0x01};
 
-  unsigned char code=0;
-  if(num>sizeof(ARA)) 
+  if(num>sizeof(ARA))
     return -1;
-  if(num<0){
-    code |= DOTNUM;
-    num=num*-1;
-  }
-  code |= ARA[num];
-  putcode(code);
 
-  str(0);
-  wait();
+  if(dot)  putcode(ARA[num]|DOTNUM);
+  else     putcode(ARA[num]);
+
+  return 0;
+}
+
+int leds_strobe(){
   str(1);
   wait();
   str(0);

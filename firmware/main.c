@@ -47,14 +47,51 @@ int main(void)
     uart_init();
     uart_stdio();
 
+    char sec,min,hour;
+    sec=min=0;
     unsigned char num=0;
-    for(;;){    /* main event loop */
+    hour=0;
+    min=36;
+    sec=0;
 
-    putnum(num++);
-    if(num > 12) num = 0;
+    for(;;){    /* main event loop */
+ /*
+      leds_put(8);
+      leds_put(8);
+      leds_put(8);
+      leds_put(8);
+  */
+    char m=num%2;
+    if(m){
+      sec+=1;
+      if(sec>=60){
+        sec=0;
+        min+=1;
+      }
+      if(min>=60){
+        min=0;
+        hour+=1;
+      }
+      if(hour>=24){
+        hour=0;
+      }
+    }
+    leds_put(hour/10,m);
+    leds_put(hour%10,m);
+    leds_put(min/10,m);
+    leds_put(min%10,m);
+     /*
+    leds_put(num*m);
+    leds_put((16-num)*m);
+    leds_put(num*m);
+    leds_put((16-num)*m);
+    */
+    num++;
+    if(num > 16) num = 0;
+    leds_strobe();
 
     //printf("Hello world\r\n");
-    _delay_ms(200);
+    _delay_ms(500);
     }
     return 0;
 }

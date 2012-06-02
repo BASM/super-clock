@@ -1,0 +1,157 @@
+Cmp-Mod V01 Created by CvPcb (2011-nov-30)-stable date = Птн 01 Июн 2012 18:56:24
+
+BeginCmp
+TimeStamp = /4FC28E20;
+Reference = P1;
+ValeurCmp = IN;
+IdModule  = SIL-5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC28E26;
+Reference = P2;
+ValeurCmp = OUT;
+IdModule  = SIL-5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC8D4EC;
+Reference = P3;
+ValeurCmp = LED_BUT;
+IdModule  = bornier5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC29366;
+Reference = P4;
+ValeurCmp = PWR_12v;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /00000000;
+Reference = P5;
+ValeurCmp = LED_TOP;
+IdModule  = bornier5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC28FE2;
+Reference = Q1;
+ValeurCmp = 2N7002;
+IdModule  = SOT23GDS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC291E2;
+Reference = Q2;
+ValeurCmp = 2N7002;
+IdModule  = SOT23GDS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC291F8;
+Reference = Q3;
+ValeurCmp = 2N7002;
+IdModule  = SOT23GDS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC29251;
+Reference = Q4;
+ValeurCmp = 2N7002;
+IdModule  = SOT23GDS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC29219;
+Reference = Q5;
+ValeurCmp = 2N7002;
+IdModule  = SOT23GDS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC29277;
+Reference = Q6;
+ValeurCmp = 2N7002;
+IdModule  = SOT23GDS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC29298;
+Reference = Q7;
+ValeurCmp = 2N7002;
+IdModule  = SOT23GDS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC292B8;
+Reference = Q8;
+ValeurCmp = 2N7002;
+IdModule  = SOT23GDS;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC2905D;
+Reference = R1;
+ValeurCmp = R180;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC290F3;
+Reference = R2;
+ValeurCmp = R68;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC29116;
+Reference = R3;
+ValeurCmp = R68;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC29118;
+Reference = R4;
+ValeurCmp = R68;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC2911D;
+Reference = R5;
+ValeurCmp = R68;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC2911E;
+Reference = R6;
+ValeurCmp = R68;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC29120;
+Reference = R7;
+ValeurCmp = R68;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC29122;
+Reference = R8;
+ValeurCmp = R68;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FC7C782;
+Reference = U1;
+ValeurCmp = H4094;
+IdModule  = DIP-16__300_ELL;
+EndCmp
+
+EndListe

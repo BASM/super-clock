@@ -51,7 +51,7 @@ int main(void)
     sec=min=0;
     unsigned char num=0;
     hour=0;
-    min=36;
+    min=59;
     sec=0;
 
     for(;;){    /* main event loop */
@@ -87,7 +87,7 @@ int main(void)
     leds_put((16-num)*m);
     */
     num++;
-    if(num > 16) num = 0;
+    if(num > 15) num = 0;
     leds_strobe();
 
     //printf("Hello world\r\n");

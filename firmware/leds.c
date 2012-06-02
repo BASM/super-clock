@@ -40,7 +40,7 @@
 #define str(i)  ({if(i){PORTB |= 0x4;}else{PORTB &= ~0x4;}})
 #define drop()  ({PORTB &= ~0x3;})
 
-#define wait() _delay_us(1000);
+#define wait() _delay_us(1);
 
 static int putcode(unsigned char num)
 {

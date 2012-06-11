@@ -1,0 +1,38 @@
+Cmp-Mod V01 Created by CvPcb (2011-nov-30)-stable date = Пнд 11 Июн 2012 21:14:27
+
+BeginCmp
+TimeStamp = /4FD6215A;
+Reference = C1;
+ValeurCmp = 0.33;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FD61EE4;
+Reference = C2;
+ValeurCmp = 0.1;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FD62159;
+Reference = P1;
+ValeurCmp = CONN_2;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FD61F6E;
+Reference = P2;
+ValeurCmp = CONN_2;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /00000000;
+Reference = U1;
+ValeurCmp = 7805_123;
+IdModule  = TO220_VERT;
+EndCmp
+
+EndListe

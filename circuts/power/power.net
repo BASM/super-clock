@@ -1,0 +1,55 @@
+# EESchema Netlist Version 1.1 created  Пнд 11 Июн 2012 21:15:47
+(
+ ( /00000000 $noname  U1 7805_123 {Lib=7805_123}
+  (    1 N-000002 )
+  (    2 N-000001 )
+  (    3 GND )
+ )
+ ( /4FD61F6E $noname  P2 CONN_2 {Lib=CONN_2}
+  (    1 N-000001 )
+  (    2 GND )
+ )
+ ( /4FD62159 $noname  P1 CONN_2 {Lib=CONN_2}
+  (    1 GND )
+  (    2 N-000002 )
+ )
+ ( /4FD61EE4 $noname  C2 0.1 {Lib=C}
+  (    1 N-000001 )
+  (    2 GND )
+ )
+ ( /4FD6215A $noname  C1 0.33 {Lib=C}
+  (    1 N-000002 )
+  (    2 GND )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "" ""
+ U1 2
+ C2 1
+ P2 1
+Net 2 "" ""
+ U1 1
+ C1 1
+ P1 2
+Net 3 "GND" "GND"
+ C1 2
+ U1 3
+ C2 2
+ P2 2
+ P1 1
+}
+#End

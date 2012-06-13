@@ -25,6 +25,8 @@
 #include "config.h"
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <avr/io.h>
 #include <avr/wdt.h>
 #include <util/delay.h>
@@ -42,6 +44,8 @@ int main(void)
     wdt_disable();
     cli();
 
+
+
     DDRD=0xFE;
     DDRB=0xFf;
     uart_init();
@@ -50,17 +54,18 @@ int main(void)
     char sec,min,hour;
     sec=min=0;
     unsigned char num=0;
-    hour=0;
-    min=59;
-    sec=0;
+
+    ///set time
+     char buff[10];
+    strcpy(buff, __TIME__);
+    buff[2]='\0';
+    buff[5]='\0';
+
+    hour=atoi(&buff[0]);
+    min=atoi(&buff[3]);
+    sec=atoi(&buff[6]);
 
     for(;;){    /* main event loop */
- /*
-      leds_put(8);
-      leds_put(8);
-      leds_put(8);
-      leds_put(8);
-  */
     char m=num%2;
     if(m){
       sec+=1;
@@ -76,10 +81,21 @@ int main(void)
         hour=0;
       }
     }
+    /*
+    leds_put(8,1);
+    leds_put(8,1);
+    leds_put(8,1);
+    leds_put(8,1);
+    leds_put(8,1);
+    leds_put(8,1);
+    // */
     leds_put(hour/10,m);
     leds_put(hour%10,m);
     leds_put(min/10,m);
     leds_put(min%10,m);
+    leds_put(sec/10,m);
+    leds_put(sec%10,m);
+    //*/
      /*
     leds_put(num*m);
     leds_put((16-num)*m);

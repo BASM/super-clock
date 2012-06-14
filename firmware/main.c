@@ -39,35 +39,10 @@
 #include "leds.h"
 
 
-int main(void)
+static char sec,min,hour;
+
+ISR(TIMER1_COMPA_vect)
 {
-    wdt_disable();
-    cli();
-
-
-
-    DDRD=0xFE;
-    DDRB=0xFf;
-    uart_init();
-    uart_stdio();
-
-    char sec,min,hour;
-    sec=min=0;
-    unsigned char num=0;
-
-    ///set time
-     char buff[10];
-    strcpy(buff, __TIME__);
-    buff[2]='\0';
-    buff[5]='\0';
-
-    hour=atoi(&buff[0]);
-    min=atoi(&buff[3]);
-    sec=atoi(&buff[6]);
-
-    for(;;){    /* main event loop */
-    char m=num%2;
-    if(m){
       sec+=1;
       if(sec>=60){
         sec=0;
@@ -80,6 +55,36 @@ int main(void)
       if(hour>=24){
         hour=0;
       }
+}
+
+int main(void)
+{
+    wdt_disable();
+    cli();
+
+    DDRD=0xFE;
+    DDRB=0xFf;
+    uart_init();
+    uart_stdio();
+
+    unsigned char num=0;
+
+    ///set time
+    char buff[10];
+    strcpy(buff, __TIME__);
+    buff[2]='\0';
+    buff[5]='\0';
+
+    hour=atoi(&buff[0]);
+    min=atoi(&buff[3]);
+    sec=atoi(&buff[6]);
+
+    timer1();
+    sei();
+
+    for(;;){    /* main event loop */
+    char m=num%2;
+    if(m){
     }
     /*
     leds_put(8,1);

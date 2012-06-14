@@ -117,6 +117,11 @@ int timer1()
 
     TCCR1B=0x0C;//0b00001100
 
+    //FIXME
+    TIMSK1=0x02;//COMPARE A
+    TCCR1B=0x02;
+    //TCCR0B
+
     TIMSK0=0x00;//no needed interrupt
     OCR0A=20;//0x29;
     power_timer1_enable();

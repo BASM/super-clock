@@ -19,7 +19,7 @@ COMPILE = avr-gcc -Os -Wall -Iusbdrv -I. -mmcu=$(DEVICE)
 # distort timing so that the specs can't be met.
 
 #OBJECTS = usbdrv/usbdrv.o usbdrv/usbdrvasm.o usbdrv/oddebug.o main.o usbtty.o
-OBJECTS = main.o uart.o leds.o
+OBJECTS = main.o uart.o leds.o timer.o
 
 # symbolic targets:
 all:	main.hex

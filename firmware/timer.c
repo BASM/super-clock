@@ -103,7 +103,7 @@ int timer1()
     //
     // // DDR must be set (its set)
     //*
-    TCCR0A=0x00;
+    TCCR1A=0x00;
     //TCCR0B
     // CS12,11,10
     //  0 0 0 -- stoped
@@ -114,17 +114,15 @@ int timer1()
     //  1 0 1 -- 1024
     //  1 1 0 -- ext1
     //  1 1 1 -- ext2
-
-    TCCR1B=0x0C;//0b00001100
+    TCCR1B=0x0B;//0b00001011
+    //                   \\\ 64
+    //                  |ctc mode
 
     //FIXME
     TIMSK1=0x02;//COMPARE A
-    TCCR1B=0x02;
-    //TCCR0B
-
-    TIMSK0=0x00;//no needed interrupt
-    OCR0A=20;//0x29;
+    OCR1A=9374;
     power_timer1_enable();
+
 
     return 0;
 }

@@ -40,21 +40,28 @@
 
 
 static char sec,min,hour;
+//#define DIVER 10 // FIXME Fo= Fclc / (2 * N * (1 + OCR1A)) it is 10, but we writed 20.
+#define DIVER 20
+static unsigned int count =0;
 
 ISR(TIMER1_COMPA_vect)
 {
-      sec+=1;
-      if(sec>=60){
-        sec=0;
-        min+=1;
-      }
-      if(min>=60){
-        min=0;
-        hour+=1;
-      }
-      if(hour>=24){
-        hour=0;
-      }
+
+  if(++count>DIVER){
+    count=0;
+    sec+=1;
+    if(sec>=60){
+      sec=0;
+      min+=1;
+    }
+    if(min>=60){
+      min=0;
+      hour+=1;
+    }
+    if(hour>=24){
+      hour=0;
+    }
+  }
 }
 
 int main(void)
@@ -66,8 +73,6 @@ int main(void)
     DDRB=0xFf;
     uart_init();
     uart_stdio();
-
-    unsigned char num=0;
 
     ///set time
     char buff[10];
@@ -81,11 +86,10 @@ int main(void)
 
     timer1();
     sei();
+    int m=0;
 
     for(;;){    /* main event loop */
-    char m=num%2;
-    if(m){
-    }
+
     /*
     leds_put(8,1);
     leds_put(8,1);
@@ -100,19 +104,21 @@ int main(void)
     leds_put(min%10,m);
     leds_put(sec/10,m);
     leds_put(sec%10,m);
-    //*/
-     /*
-    leds_put(num*m);
-    leds_put((16-num)*m);
-    leds_put(num*m);
-    leds_put((16-num)*m);
-    */
-    num++;
-    if(num > 15) num = 0;
+    leds_strobe();
+    //_delay_us(1);
+    
+    leds_put(17,m);
+    leds_put(17,m);
+    leds_put(17,m);
+    leds_put(17,m);
+    leds_put(17,m);
+    leds_put(17,m);
+    leds_put(17,m);
     leds_strobe();
 
-    //printf("Hello world\r\n");
-    _delay_ms(500);
+    //_delay_us(100000);
+    _delay_ms(10);
+    //_delay_ms(sec/2);
     }
     return 0;
 }

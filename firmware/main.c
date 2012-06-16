@@ -41,13 +41,13 @@
 
 static char sec,min,hour;
 //#define DIVER 10 // FIXME Fo= Fclc / (2 * N * (1 + OCR1A)) it is 10, but we writed 20.
-#define DIVER 20
+#define DIVER 750
 static unsigned int count =0;
 
-ISR(TIMER1_COMPA_vect)
+ISR(TIMER2_COMPA_vect)
 {
 
-  if(++count>DIVER){
+  if(++count>=DIVER){
     count=0;
     sec+=1;
     if(sec>=60){
@@ -84,7 +84,7 @@ int main(void)
     min=atoi(&buff[3]);
     sec=atoi(&buff[6]);
 
-    timer1();
+    timer2();
     sei();
     int m=0;
 
@@ -98,15 +98,18 @@ int main(void)
     leds_put(8,1);
     leds_put(8,1);
     // */
-    leds_put(hour/10,m);
+    if(hour/10 == 0)
+      leds_put(17,m);
+    else
+      leds_put(hour/10,m);
     leds_put(hour%10,m);
     leds_put(min/10,m);
     leds_put(min%10,m);
     leds_put(sec/10,m);
     leds_put(sec%10,m);
     leds_strobe();
-    //_delay_us(1);
-    
+    _delay_ms(1);
+
     leds_put(17,m);
     leds_put(17,m);
     leds_put(17,m);
@@ -116,9 +119,7 @@ int main(void)
     leds_put(17,m);
     leds_strobe();
 
-    //_delay_us(100000);
     _delay_ms(10);
-    //_delay_ms(sec/2);
     }
     return 0;
 }

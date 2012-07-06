@@ -1,17 +1,17 @@
-Cmp-Mod V01 Created by CvPcb (2011-nov-30)-stable date = Втр 03 Июл 2012 23:14:58
+Cmp-Mod V01 Created by CvPcb (2011-nov-30)-stable date = Птн 06 Июл 2012 22:53:18
 
 BeginCmp
 TimeStamp = /4FF1FEE4;
 Reference = C1;
 ValeurCmp = C;
-IdModule  = SM2512;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FF1F797;
 Reference = C2;
 ValeurCmp = C;
-IdModule  = SM2512;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
@@ -1334,14 +1334,14 @@ BeginCmp
 TimeStamp = /4FF1FEE6;
 Reference = SW1;
 ValeurCmp = SW_PUSH;
-IdModule  = SM2512;
+IdModule  = SM1210;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FF1FEE3;
 Reference = X1;
 ValeurCmp = CRYSTAL;
-IdModule  = SM1812;
+IdModule  = SM0603;
 EndCmp
 
 EndListe

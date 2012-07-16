@@ -1,14 +1,14 @@
-# EESchema Netlist Version 1.1 created  Пнд 16 Июл 2012 23:43:05
+# EESchema Netlist Version 1.1 created  Втр 17 Июл 2012 00:18:39
 (
- ( /50046C69 SM1812 0.1 CP1
+ ( /50046C69 SM1210 0.1 CP1
   ( 1 N-000012 )
   ( 2 GND )
  )
- ( /4FF1FEE4 SM0603 C1 C
+ ( /4FF1FEE4 SM0805 C1 C
   ( 1 N-000026 )
   ( 2 GND )
  )
- ( /4FF1F797 SM0603 C2 C
+ ( /4FF1F797 SM0805 C2 C
   ( 1 N-000027 )
   ( 2 GND )
  )
@@ -88,7 +88,7 @@
   ( 1 N-000025 )
   ( 2 GND )
  )
- ( /4FF1FEE3 SM0603 X1 CRYSTAL
+ ( /4FF1FEE3 SM1206 X1 CRYSTAL
   ( 1 N-000027 )
   ( 2 N-000026 )
  )

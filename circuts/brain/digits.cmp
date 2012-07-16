@@ -1,0 +1,108 @@
+Cmp-Mod V01 Created by CvPcb (2011-nov-30)-stable date = Пнд 16 Июл 2012 23:43:05
+
+BeginCmp
+TimeStamp = /50046C69;
+Reference = 0.1;
+ValeurCmp = CP1;
+IdModule  = SM1812;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FF1FEE4;
+Reference = C1;
+ValeurCmp = C;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FF1F797;
+Reference = C2;
+ValeurCmp = C;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /50046C6A;
+Reference = D1;
+ValeurCmp = TSOP34836;
+IdModule  = TO92-123;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FF1FEE2;
+Reference = IC1;
+ValeurCmp = ATMEGA88PA-A;
+IdModule  = TQFP32;
+EndCmp
+
+BeginCmp
+TimeStamp = /00000000;
+Reference = K1;
+ValeurCmp = momis;
+IdModule  = SIL-3;
+EndCmp
+
+BeginCmp
+TimeStamp = /500461A8;
+Reference = K2;
+ValeurCmp = DataClkS;
+IdModule  = SIL-3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FF1FEDF;
+Reference = P1;
+ValeurCmp = CONN_1;
+IdModule  = SIL-1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FF1FEE5;
+Reference = P2;
+ValeurCmp = uart;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FF1FEE7;
+Reference = P3;
+ValeurCmp = CONN_2;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FF1FCC4;
+Reference = P4;
+ValeurCmp = CONN_2;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FF1FCC6;
+Reference = P5;
+ValeurCmp = CONN_2;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /50046C68;
+Reference = R1;
+ValeurCmp = 68;
+IdModule  = SM1210;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FF1FEE6;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = SM1210;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FF1FEE3;
+Reference = X1;
+ValeurCmp = CRYSTAL;
+IdModule  = SM0603;
+EndCmp
+
+EndListe

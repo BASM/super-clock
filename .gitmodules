@@ -1,0 +1,3 @@
+[submodule "firmware/libs/libir"]
+	path = firmware/libs/libir
+	url = git@github.com:BASM/avr_libinfrared.git

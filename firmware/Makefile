@@ -14,7 +14,7 @@ AVRDUDE = avrdude -c ${TYPEPROG} -p m168
 #COMPILE = avr-gcc -save-temps -Wall -Os -Iusbdrv -I. -mmcu=$(DEVICE)  -L/usr/i686-pc-linux-gnu/avr/lib #-DDEBUG_LEVEL=2
 #COMPILE = avr-gcc -save-temps -Wall -Os -Iusbdrv -I. -mmcu=$(DEVICE)  -L/usr/x86_64-pc-linux-gnu/avr/lib #-DDEBUG_LEVEL=2
 #COMPILE = avr-gcc -save-temps -Os -Wall -Iusbdrv -I. -mmcu=$(DEVICE)  
-COMPILE = avr-gcc -Os -Wall -Iusbdrv -I. -mmcu=$(DEVICE)  
+COMPILE = avr-gcc -Os -Wall -Iusbdrv -I. -mmcu=$(DEVICE)  -Ilibs/libir/include/
 # NEVER compile the final product with debugging! Any debug output will
 # distort timing so that the specs can't be met.
 
@@ -22,7 +22,10 @@ COMPILE = avr-gcc -Os -Wall -Iusbdrv -I. -mmcu=$(DEVICE)
 OBJECTS = main.o uart.o leds.o timer.o
 
 # symbolic targets:
-all:	main.hex
+all: libir main.hex
+
+libir:
+	make -C libs/libir/
 
 .c.o:
 	$(COMPILE) -c $< -o $@
@@ -96,8 +99,8 @@ clean:
 	rm -f main.hex main.lst main.obj main.cof main.list main.map main.eep.hex main.bin *.o usbdrv/*.o main.s usbdrv/oddebug.s usbdrv/usbdrv.s
 
 # file targets:
-main.bin:	$(OBJECTS)
-	$(COMPILE) -o main.bin $(OBJECTS)
+main.bin:	$(OBJECTS) libs/libir/libir.a
+	$(COMPILE) -o main.bin $(OBJECTS) -Llibs/libir -lir
 
 main.hex:	main.bin
 	rm -f main.hex main.eep.hex

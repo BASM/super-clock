@@ -133,12 +133,14 @@ int timer2()
 
     // 12 000 000 / 1024 / 2dc6 == 1 Hz
     TCCR2A=0x02;
-    TCCR2B=0x04;
+    TCCR2B=0x02;//Diver /8
 
     //OCR2A=250;
     OCR2A=249;
 
     TIMSK2=0x02;//COMPARE A
+
+    ASSR=1<<5|1<<6;
     //TCCR0B
     // 0b??--1101
     //   ||   | 010 -- clk/8

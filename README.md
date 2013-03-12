@@ -1,6 +1,6 @@
 super-clock
 ===========
 
-Physical clock (schemantic + firmware for AVR)
+Physical clock (schematic + firmware for AVR)
 
-Shemantic and firmware for AVR microcontroller.
+Schematic and firmware for AVR microcontroller.

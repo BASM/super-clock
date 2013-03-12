@@ -41,7 +41,7 @@
 #include <ir.h>
 
 static char sec,min,hour;
-//#define DIVER 10 // FIXME Fo= Fclc / (2 * N * (1 + OCR1A)) it is 10, but we writed 20.
+//#define DIVER 10 // FIXME Fo= Fclc / (2 * N * (1 + OCR1A)) it is 10, but we set 20.
 #define DIVER 6000
 static unsigned int count =0;
 static unsigned long time=0;
@@ -108,14 +108,14 @@ int ir_dumpresult(char* array, int size)
 
   if (a==0x40){
     if(b==0xff){
-      if ( (c==0x01) && (d==0xfe) ) hour++;
-      if ( (c==0x04) && (d==0xfb) ) hour--;
+      if ( (c==0x01) && (d==0xfe) ) hour = (hour+1)%24;
+      if ( (c==0x04) && (d==0xfb) ) hour = (hour+23)%24;
 
-      if ( (c==0x02) && (d==0xfd) ) min++;
-      if ( (c==0x05) && (d==0xfa) ) min--;
+      if ( (c==0x02) && (d==0xfd) ) min = (min+1)%60;
+      if ( (c==0x05) && (d==0xfa) ) min = (min+59)%60;
 
-      if ( (c==0x03) && (d==0xfc) ) sec++;
-      if ( (c==0x06) && (d==0xf9) ) sec--;
+      if ( (c==0x03) && (d==0xfc) ) sec = (sec+1)%60;
+      if ( (c==0x06) && (d==0xf9) ) sec = (sec+59)%60;
     }
   }
   return 0;
